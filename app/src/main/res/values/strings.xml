@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CurlApiCalling</string>
+
+    <string name="example_url">https://a3dyou.com:9000/texture/state/uuid?uuid=12</string>
+
+    <string name="server_cert_asset_name">client.pem</string>
+    <string name="client_cert_file_name">client.pfx</string>
+    <string name="client_cert_password">test</string>
+
+
+</resources>

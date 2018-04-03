@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/screen_background_light"
+    >
+    <ScrollView
+        android:id="@+id/mainTextScroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/mainTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Done!"
+                android:gravity="center"
+                android:layout_weight="1.0"
+                android:background="@android:drawable/editbox_background"
+                android:textColor="#000"
+                />
+
+
+            <LinearLayout
+                android:layout_below="@id/mainTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Response Code"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:background="@android:drawable/editbox_background"
+                    android:textColor="#000"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtResCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Loading..."
+                    android:gravity="center"
+                    android:layout_weight="1.0"
+                    android:background="@android:drawable/editbox_background"
+                    android:textColor="#000"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>
