@@ -69,6 +69,7 @@ public class CustomTrustManager implements X509TrustManager {
      * @param authType the authentication type based on the client certificate
      * @throws CertificateException
      */
+
     public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         try {
             originalX509TrustManager.checkServerTrusted(chain, authType);
@@ -132,8 +133,8 @@ public class CustomTrustManager implements X509TrustManager {
     }
 
     /**
-     * A helper method for certificate re-ordering.
-     * Finds the first certificate in the list of certificates that is signed by the sigingCert.
+     * A helper method for certificate re-ordering
+     * Finds the first certificate in the list of certificates that is signed by the signingCert.
      */
     private X509Certificate findSignedCert(X509Certificate signingCert, List<X509Certificate> certificates) {
         X509Certificate signed = null;

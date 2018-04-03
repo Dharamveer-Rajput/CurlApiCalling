@@ -55,12 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         progressBar = findViewById(R.id.progressBar);
         imageSuccess = findViewById(R.id.imageSuccess);
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         clientCertificateName = getResources().getString(R.string.client_cert_file_name);
         clientCertificatePassword = getResources().getString(R.string.client_cert_password);
         exampleUrl = getResources().getString(R.string.example_url);
-
 
 
     }
@@ -137,8 +134,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
 
     private void doRequest() {
 
@@ -207,10 +202,6 @@ public class MainActivity extends AppCompatActivity {
         int result = ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         return result == PackageManager.PERMISSION_GRANTED;
     }
-
-
-
-
 
     private File getClientCertFile() {
         File externalStorageDir = Environment.getExternalStorageDirectory();
