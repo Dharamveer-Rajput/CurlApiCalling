@@ -54,7 +54,7 @@ public class CustomTrustManager implements X509TrustManager {
      * No-op. Never invoked by client, only used in server-side implementations
      * @return
      */
-    public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+    public void checkClientTrusted(X509Certificate[] chain, String authType) {
     }
 
 

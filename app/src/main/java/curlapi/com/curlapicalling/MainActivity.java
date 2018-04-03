@@ -11,6 +11,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
    // @InjectResource(R.string.example_url)
     String exampleUrl;
+    ProgressBar progressBar;
+    ImageView imageSuccess;
+
     private static final int PERMISSION_REQUEST_CODE = 1;
 
 
@@ -56,12 +62,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        progressBar = findViewById(R.id.progressBar);
+        imageSuccess = findViewById(R.id.imageSuccess);
+
         mainTextView = findViewById(R.id.mainTextView);
         txtResCode = findViewById(R.id.txtResCode);
         mainTextScroller = findViewById(R.id.mainTextScroller);
 
         caCertificateName = getResources().getString(R.string.server_cert_asset_name);
-        clientCertificateName = getResources().getString(R.string.client_cert_file_name);;
+        clientCertificateName = getResources().getString(R.string.client_cert_file_name);
         clientCertificatePassword = getResources().getString(R.string.client_cert_password);
         exampleUrl = getResources().getString(R.string.example_url);
 
@@ -182,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 protected void onPostExecute(final Object result) {
                     updateOutput("Done!");
+                    imageSuccess.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+
                 }
             }.execute();
 
@@ -193,11 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            return false;
-        }
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
 

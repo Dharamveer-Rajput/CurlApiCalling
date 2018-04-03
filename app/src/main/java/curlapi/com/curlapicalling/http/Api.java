@@ -38,7 +38,7 @@ public class Api {
     }
 
 
-    public String doGet(String url)  throws Exception {
+    public String doGet(String url) {
         String result = null;
 
         HttpURLConnection urlConnection = null;
@@ -66,7 +66,7 @@ public class Api {
     }
 
 
-    public String doPost(String url)  throws Exception {
+    public String doPost(String url) {
         String result = null;
 
         HttpURLConnection urlConnection = null;
